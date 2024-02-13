@@ -9,4 +9,5 @@ import app.portfolio_samuel_santinelli.vercel.todolist.model.TaskModel;
 
 public interface TaskRepository extends JpaRepository<TaskModel, UUID>{
         List<TaskModel> findByUserId(UUID userId);
+        
 }
