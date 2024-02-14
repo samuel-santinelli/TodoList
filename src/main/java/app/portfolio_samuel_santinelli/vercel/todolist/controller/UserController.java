@@ -1,4 +1,4 @@
-package app.portfolio_samuel_santinelli.vercel.todolist.controler;
+package app.portfolio_samuel_santinelli.vercel.todolist.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

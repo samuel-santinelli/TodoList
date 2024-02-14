@@ -1,4 +1,4 @@
-package app.portfolio_samuel_santinelli.vercel.todolist.controler;
+package app.portfolio_samuel_santinelli.vercel.todolist.controller;
 
 import app.portfolio_samuel_santinelli.vercel.todolist.model.TaskModel;
 import app.portfolio_samuel_santinelli.vercel.todolist.repository.TaskRepository;
