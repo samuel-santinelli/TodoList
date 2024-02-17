@@ -1,0 +1,10 @@
+app\portfolio_samuel_santinelli\vercel\todolist\utils\Utils.class
+app\portfolio_samuel_santinelli\vercel\todolist\repository\TaskRepository.class
+app\portfolio_samuel_santinelli\vercel\todolist\exception\ExceptionHandlerController.class
+app\portfolio_samuel_santinelli\vercel\todolist\TodolistApplication.class
+app\portfolio_samuel_santinelli\vercel\todolist\controller\TaskController.class
+app\portfolio_samuel_santinelli\vercel\todolist\security\FilterTaskAuth.class
+app\portfolio_samuel_santinelli\vercel\todolist\controller\UserController.class
+app\portfolio_samuel_santinelli\vercel\todolist\model\TaskModel.class
+app\portfolio_samuel_santinelli\vercel\todolist\model\UserModel.class
+app\portfolio_samuel_santinelli\vercel\todolist\repository\UserRepository.class
