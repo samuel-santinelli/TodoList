@@ -2,6 +2,7 @@ package app.portfolio_samuel_santinelli.vercel.todolist.controler;
 
 import app.portfolio_samuel_santinelli.vercel.todolist.model.TaskModel;
 import app.portfolio_samuel_santinelli.vercel.todolist.repository.TaskRepository;
+import app.portfolio_samuel_santinelli.vercel.todolist.utils.Utils;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.time.LocalDateTime;
@@ -13,7 +14,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,9 +46,19 @@ public class TaskController {
     }
 
     @GetMapping("/")
-    public List<TaskModel> list(HttpServletRequest request){
+    public List<TaskModel> list(HttpServletRequest request) {
         var userId = request.getAttribute("userId");
         var tasks = this.taskRepository.findByUserId((UUID) userId);
         return tasks;
     }
+
+    @PutMapping("/{id}")
+    public TaskModel update(@RequestBody TaskModel taskModel, @PathVariable UUID id, HttpServletRequest request) {        
+        var task = this.taskRepository.findById(id).orElse(null);
+
+        Utils.copyNonNullProperties(taskModel, task);
+                
+        return this.taskRepository.save(task);
+    }
+
 }
